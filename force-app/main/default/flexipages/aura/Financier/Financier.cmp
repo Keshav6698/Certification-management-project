@@ -1,0 +1,34 @@
+<aura:component controller="Financier_payment" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">
+    <aura:handler  name="init" value="{!this}" action="{!c.handleClick}"/>
+   
+    <aura:attribute name="listCon" type="List" />
+      <lightning:notificationsLibrary aura:id="notifLib" />
+     <lightning:recordForm 
+        recordId = "{!v.recordId}"
+        objectApiName="Payments__c"
+        layoutType="Compact"
+        mode="edit"></lightning:recordForm>
+       
+     <div class="slds_page-header">
+     <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+        <thead>
+            <tr>
+                <th>Customer Name</th>
+                <th>Mode of Payment</th>
+                <th>Payment Status</th>
+            </tr>
+          
+        </thead>
+     <tbody>    
+        <aura:iteration items="{!v.listCon}" var="con">
+             <tr>
+                <td>{!con.Name}</td>
+                 <td>{!con.Mode_Of_Payment__c}</td>  
+                  <td>{!con.Payment_Status__c}</td>
+                 </tr>
+       </aura:iteration>
+   </tbody>
+</table>
+  
+    </div>
+</aura:component>

@@ -1,0 +1,19 @@
+<template>
+    <h1 style="font-size: 3em; color:rgb(0, 77, 80)"><u></u>Load The Booked Truck</u></h1><br></br>
+
+    <div style="width: 50%;"><lightning-record-edit-form object-api-name="Truck_Load__c" onsuccess={handleSuccess} onsubmit ={handleSubmit}>
+        <lightning-messages>
+        </lightning-messages>
+        <lightning-input-field field-name='Truck_Booking__c'></lightning-input-field>
+        <lightning-input-field field-name='Truck_Name__c'></lightning-input-field>
+        <lightning-input-field field-name='Number_of_Load_Items_c__c'></lightning-input-field>
+        <lightning-input-field field-name='Expected_Weight_c__c'></lightning-input-field>
+        
+        <lightning-button class="slds-m-top_small" type="submit" label="OK" >
+        </lightning-button>
+        <lightning-button class="slds-m-top_small" type="submit" label="Confirm Truck Loading" onclick={showSuccessToast}>
+        </lightning-button>
+    
+    </lightning-record-edit-form></div></center>
+
+</template>
